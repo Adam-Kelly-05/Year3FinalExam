@@ -33,7 +33,13 @@ namespace Q1
             DateTime dob = DOB_DTPKR.SelectedDate.Value;
             string contactNumber = PhoneNumber_TXTBX.Text;
 
-            // Add patient to database
+            db.Patients.Add(new Patient()
+            {
+                FirstName = firstName,
+                Surname = surname,
+                DOB = dob,
+                ContactNumber = contactNumber
+            });
 
             DisplayPatients();
         }

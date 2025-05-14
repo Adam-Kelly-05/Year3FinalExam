@@ -19,14 +19,14 @@ namespace Q1
     /// </summary>
     public partial class AppointmentWindow : Window
     {
+        public PatientData db = new PatientData();
+
         private MainWindow mainWindow;
 
         public AppointmentWindow(MainWindow owner)
         {
             InitializeComponent();
             mainWindow = owner;
-
-
         }
 
         private void AddAppointment_BTN_Click(object sender, RoutedEventArgs e)
@@ -34,7 +34,10 @@ namespace Q1
             DateTime appointmentDate = Date_DTPKR.SelectedDate.Value;
             string appointmentTime = Time_TMPKR.Text;
 
-            // Add appointment to database
+            db.Appointments.Add(new Appointment()
+            {
+                AppointmentTime = appointmentDate
+            });
 
             var query = from a in mainWindow.db.Appointments
                         select a;
