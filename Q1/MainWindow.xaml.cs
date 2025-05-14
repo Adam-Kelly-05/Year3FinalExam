@@ -25,12 +25,28 @@ namespace Q1
         public MainWindow()
         {
             InitializeComponent();
+            DisplayPatients();
+        }
 
+        public void DisplayPatients()
+        {
             var query = from p in db.Patients
                         orderby p.FirstName
                         select p;
 
             Patients_LBX.ItemsSource = query.ToList();
+        }
+
+        private void AddPatient_BTN_Click(object sender, RoutedEventArgs e)
+        {
+            string firstName = FirstName_TXTBX.Text;
+            string surname = SurName_TXTBX.Text;
+            DateTime dob = DOB_DTPKR.SelectedDate.Value;
+            string contactNumber = PhoneNumber_TXTBX.Text;
+
+            // Add patient to database
+
+            DisplayPatients();
         }
     }
 }
