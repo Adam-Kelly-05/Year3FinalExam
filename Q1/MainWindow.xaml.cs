@@ -57,11 +57,40 @@ namespace Q1
         {
             Patient selected = Patients_LBX.SelectedItem as Patient;
 
+            FirstName_TXTBX.Text = selected.FirstName;
+            SurName_TXTBX.Text = selected.Surname;
+            PhoneNumber_TXTBX.Text = selected.ContactNumber;
+            DOB_DTPKR.SelectedDate = selected.DOB;
+
             if (selected.Appointments.Count() == 0)
                 Appointment_LBX.ItemsSource = "No Appointments";
             else
                 Appointment_LBX.ItemsSource = selected.Appointments;
+        }
 
+        private void Appointment_Selection_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            Appointment selected = Appointment_LBX.SelectedItem as Appointment;
+        }
+
+        private void FirstName_TXTBX_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            FirstName_TXTBX.Text = "";
+        }
+
+        private void SurName_TXTBX_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            SurName_TXTBX.Text = "";
+        }
+
+        private void PhoneNumber_TXTBX_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            PhoneNumber_TXTBX.Text = "";
+        }
+
+        private void DOB_DTPKR_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DOB_DTPKR.SelectedDate = DateTime.Now;
         }
     }
 }

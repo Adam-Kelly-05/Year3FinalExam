@@ -10,17 +10,17 @@
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="25,25,0,0" TextWrapping="Wrap" Text="Patients" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="309,25,0,0" TextWrapping="Wrap" Text="Patient Details" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
-        <TextBox x:Name="FirstName_TXTBX" HorizontalAlignment="Left" Margin="309,79,0,0" TextWrapping="Wrap" Text="Enter first name" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FirstName_TXTBX" HorizontalAlignment="Left" Margin="309,79,0,0" TextWrapping="Wrap" Text="Enter first name" VerticalAlignment="Top" Width="120" MouseDown="FirstName_TXTBX_MouseDown"/>
         <!--materialDesign:HintAssist.Hint="Enter first name" gave me an error-->
-        <TextBox x:Name="SurName_TXTBX" HorizontalAlignment="Left" Margin="483,79,0,0" TextWrapping="Wrap" Text="Enter surname" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SurName_TXTBX" HorizontalAlignment="Left" Margin="483,79,0,0" TextWrapping="Wrap" Text="Enter surname" VerticalAlignment="Top" Width="120" MouseDown="SurName_TXTBX_MouseDown"/>
         <Button x:Name="AddPatient_BTN" Content="Add" HorizontalAlignment="Left" Margin="645,79,0,0" VerticalAlignment="Top" Click="AddPatient_BTN_Click"/>
-        <TextBox x:Name="PhoneNumber_TXTBX" HorizontalAlignment="Left" Margin="309,130,0,0" TextWrapping="Wrap" Text="Enter phone number" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PhoneNumber_TXTBX" HorizontalAlignment="Left" Margin="309,130,0,0" TextWrapping="Wrap" Text="Enter phone number" VerticalAlignment="Top" Width="120" MouseDown="PhoneNumber_TXTBX_MouseDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="483,135,0,0" TextWrapping="Wrap" Text="DOB" VerticalAlignment="Top"/>
-        <DatePicker x:Name="DOB_DTPKR" HorizontalAlignment="Left" Margin="543,130,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="DOB_DTPKR" HorizontalAlignment="Left" Margin="543,130,0,0" VerticalAlignment="Top" MouseDown="DOB_DTPKR_MouseDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="309,217,0,0" TextWrapping="Wrap" Text="Appointments" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <Button x:Name="AddAppointment_BTN" Content="Add" HorizontalAlignment="Left" Margin="689,262,0,0" VerticalAlignment="Top" Click="AddAppointment_BTN_Click"/>
         <Button Content="Edit" HorizontalAlignment="Left" Margin="689,318,0,0" VerticalAlignment="Top"/>
-        <ListBox SelectionChanged="Patient_Selection_Changed" x:Name="Patients_LBX" d:ItemsSource="{d:SampleData ItemCount=5}" DisplayMemberPath="FirstName" Margin="25,71,530,201"/>
-        <ListBox x:Name="Appointment_LBX" d:ItemsSource="{d:SampleData ItemCount=3}" Margin="309,262,126,21"/>
+        <ListBox SelectionChanged="Patient_Selection_Changed" x:Name="Patients_LBX" DisplayMemberPath="FirstName" Margin="25,71,530,201"/>
+        <ListBox SelectionChanged="Appointment_Selection_Changed" x:Name="Appointment_LBX" Margin="309,262,126,21"/>
     </Grid>
 </Window>
