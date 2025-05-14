@@ -20,7 +20,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="309,217,0,0" TextWrapping="Wrap" Text="Appointments" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <Button x:Name="AddAppointment_BTN" Content="Add" HorizontalAlignment="Left" Margin="689,262,0,0" VerticalAlignment="Top" Click="AddAppointment_BTN_Click"/>
         <Button Content="Edit" HorizontalAlignment="Left" Margin="689,318,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="Patients_LBX" d:ItemsSource="{d:SampleData ItemCount=5}" DisplayMemberPath="FirstName" Margin="25,71,530,201"/>
+        <ListBox SelectionChanged="Patient_Selection_Changed" x:Name="Patients_LBX" d:ItemsSource="{d:SampleData ItemCount=5}" DisplayMemberPath="FirstName" Margin="25,71,530,201"/>
         <ListBox x:Name="Appointment_LBX" d:ItemsSource="{d:SampleData ItemCount=3}" Margin="309,262,126,21"/>
     </Grid>
 </Window>
