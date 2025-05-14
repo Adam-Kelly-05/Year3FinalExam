@@ -20,9 +20,17 @@ namespace Q1
     /// </summary>
     public partial class MainWindow : Window
     {
+        PatientData db = new PatientData();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            var query = from p in db.Patients
+                        orderby p.FirstName
+                        select p;
+
+            Patients_LBX.ItemsSource = query.ToList();
         }
     }
 }

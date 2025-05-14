@@ -10,17 +10,17 @@
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="25,25,0,0" TextWrapping="Wrap" Text="Patients" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="309,25,0,0" TextWrapping="Wrap" Text="Patient Details" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
-        <TextBox HorizontalAlignment="Left" Margin="309,79,0,0" TextWrapping="Wrap" Text="Enter first name" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FirstName_TXTBX" HorizontalAlignment="Left" Margin="309,79,0,0" TextWrapping="Wrap" Text="Enter first name" VerticalAlignment="Top" Width="120"/>
         <!--materialDesign:HintAssist.Hint="Enter first name" gave me an error-->
-        <TextBox HorizontalAlignment="Left" Margin="483,79,0,0" TextWrapping="Wrap" Text="Enter surname" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SurName_TXTBX" HorizontalAlignment="Left" Margin="483,79,0,0" TextWrapping="Wrap" Text="Enter surname" VerticalAlignment="Top" Width="120"/>
         <Button Content="Add" HorizontalAlignment="Left" Margin="645,79,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="309,130,0,0" TextWrapping="Wrap" Text="Enter phone number" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PhoneNumber_TXTBX1" HorizontalAlignment="Left" Margin="309,130,0,0" TextWrapping="Wrap" Text="Enter phone number" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="483,135,0,0" TextWrapping="Wrap" Text="DOB" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="543,130,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="DOOB_DTPKR" HorizontalAlignment="Left" Margin="543,130,0,0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="309,217,0,0" TextWrapping="Wrap" Text="Appointments" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <Button Content="Add" HorizontalAlignment="Left" Margin="689,262,0,0" VerticalAlignment="Top"/>
         <Button Content="Edit" HorizontalAlignment="Left" Margin="689,318,0,0" VerticalAlignment="Top"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="25,71,530,201"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=3}" Margin="309,262,126,21"/>
+        <ListBox x:Name="Patients_LBX" d:ItemsSource="{d:SampleData ItemCount=5}" DisplayMemberPath="FirstName" Margin="25,71,530,201"/>
+        <ListBox x:Name="Appointment_LBX" d:ItemsSource="{d:SampleData ItemCount=3}" Margin="309,262,126,21"/>
     </Grid>
 </Window>

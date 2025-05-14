@@ -38,6 +38,8 @@ namespace DataManagement2
                 db.Patients.Add(p1);
                 db.Patients.Add(p2);
                 db.Patients.Add(p3);
+
+                db.SaveChanges();
             }
         }
     }
