@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Q1
-{    class Appointment
+{    public class Appointment
     {
         public int AppointmentID { get; set; }
         public DateTime AppointmentTime { get; set; }
@@ -16,7 +16,7 @@ namespace Q1
         public virtual Patient Patient { get; set; }
     }
 
-    class Patient
+    public class Patient
     {
         public int PatientID { get; set; }
         public string FirstName { get; set; }
@@ -25,5 +25,12 @@ namespace Q1
         public string ContactNumber { get; set; }
 
         public virtual List<Appointment> Appointments { get; set; }
+    }
+
+    public class PatientData : DbContext
+    {
+        public PatientData() : base("OODExam_AdamKelly") { }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
     }
 }
